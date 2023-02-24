@@ -239,17 +239,22 @@ body {
 .about-me .header button {
   cursor: pointer;
   background-color: transparent;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0 15px;
+  border-radius: 1rem;
+  text-shadow: 1px 1px 5px black;
 
   transition-property: color, text-shadow, transform;
   transition-duration: 0.5s;
+
+  animation-name: nav;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
 }
 
 .about-me .header button:hover {
   color: #20C20E;
-  text-shadow: 1px 1px 5px black;
-  transform: scale(1.2);
+  text-shadow: 1px 1px black;
 }
 
 .about-me .about {
@@ -307,7 +312,7 @@ body {
 }
 
 .education .education-projects {
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   align-self: start;
 }
 
@@ -315,8 +320,13 @@ body {
   list-style-type: "> ";
 }
 
+.education .education-projects li {
+  margin: 0.5rem 0;
+}
+
 .education .education-projects b {
   color: #20C20E;
+  font-size: 1.1rem;
 }
 
 /*
@@ -349,7 +359,7 @@ body {
 }
 
 .work-experience .work-responsibility {
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   align-self: start;
 }
 
@@ -357,8 +367,13 @@ body {
   list-style-type: "> ";
 }
 
+.work-experience .work-responsibility li {
+  margin: 0.5rem 0;
+}
+
 .work-experience .work-responsibility b {
   color: #20C20E;
+  font-size: 1.1rem;
 }
 
 /*
@@ -387,14 +402,47 @@ body {
 }
 
 .skill .skill-list {
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   align-self: start;
 }
 
-.work-experience .work-responsibility ul {
+.skill .skill-list ul {
   list-style-type: "> ";
 }
 
-.work-experience .work-responsibility b {
+.skill .skill-list li {
+  margin: 0.5rem 0;
+}
+
+.skill .skill-list b {
+  font-size: 1.5rem;
   color: #20C20E;
+}
+
+/*
+----- CONTACT ME
+*/
+
+.contact {
+  padding: 1rem;
+  margin-top: 2.5rem;
+  background-color: #eed9c4;
+  border-radius: 24px;
+}
+
+.contact .contact-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #20C20E;
+  text-shadow: 1px 1px 5px black;
+}
+
+.my-contacts {
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+.my-contacts label {
+  color: #20C20E;
+  font-weight: bold;
 }
