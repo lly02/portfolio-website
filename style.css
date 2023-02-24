@@ -1,0 +1,400 @@
+/*
+----- RESPONSIVE -----
+*/
+
+@media only screen and (max-width: 600px) {
+  :root{
+    --main-font-size: 16px;
+    --hello-world-size: 2.4rem;
+    --body-x-padding: 0vw;
+  }
+
+  body {
+    padding-right: var(--body-x-padding);
+    padding-left: var(--body-x-padding);
+  }
+
+  .nav-right {
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :root{
+    --main-font-size: 20px;
+    --hello-world-size: 2.4rem;
+    --body-x-padding: 10vw;
+  }
+
+  body {
+    padding-right: var(--body-x-padding);
+    padding-left: var(--body-x-padding);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  :root{
+    --main-font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :root{
+    --main-font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root{
+    --main-font-size: 20px;
+  }
+}
+
+/*
+----- MAIN -----
+*/
+
+*::-webkit-scrollbar {
+  width: 10px;  
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background-color: #20C20E;
+  box-shadow: inset 1px 1px 1px black, inset -1px -1px 1px black;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Shantell Sans', cursive;
+  font-size: var(--main-font-size);
+  color: #353839;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: overlay;
+  background-color: #fff0db;
+}
+
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: calc(100vw - var(--body-x-padding) * 2);
+  background-color: transparent;
+}
+
+.nav img {
+  max-height: 45px;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.nav img:hover {
+  animation-name: nav;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.home-link img {
+  max-height: 70px;
+}
+
+.nav a {
+  color: transparent;
+}
+
+@keyframes nav {
+  60% { transform: scale(1.2); }
+  70% { transform: rotate(-0.05turn); }
+  80% { transform: rotate(0.05turn); }
+  90% { transform: rotate(-0.05turn); }
+  100% { transform: rotate(0turn); }
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  font-size: 0.5rem;
+  padding: 10px;
+}
+
+.introduction .header {
+  display: flex;
+  flex-direction: row;
+}
+
+.introduction h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--hello-world-size);
+  color: #20C20E;
+  text-shadow: 1px 1px 5px black;
+}
+
+.introduction h1:after {
+  content: "_";
+  animation-name: fadeout;
+  animation-duration: 0.55s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: steps(1, start);
+}
+
+@keyframes fadeout {
+  50% { opacity: 1 }
+  to { opacity: 0 }
+}
+
+.introduction span:not(.introduction-next) {
+  position: relative;
+  line-height: 2;
+  text-indent: 0.5rem;
+  left: 120%;
+}
+
+.introduction span:nth-of-type(1) {
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.introduction span:nth-of-type(2) {
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-delay: 1.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  to { left: 0; }
+}
+
+.introduction-next {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  align-self: center;
+  font-size: 1.5rem;
+
+  animation-name: bounce;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+}
+
+.introduction-next img {
+  height: 1rem;
+  object-fit: contain;
+}
+
+@keyframes bounce {
+  to { padding: 15px; }
+}
+
+/*
+----- ABOUT ME 
+*/
+
+@media only screen and (min-width: 600px) {
+  .about-me {
+    border-radius: 2rem;
+  }
+}
+
+.about-me {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+  background-color: #eed9c4;
+}
+
+.about-me .header {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-me .header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #20C20E;
+  text-shadow: 1px 1px 5px black;
+}
+
+.about-me .header button {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 2rem;
+  padding: 0 15px;
+
+  transition-property: color, text-shadow, transform;
+  transition-duration: 0.5s;
+}
+
+.about-me .header button:hover {
+  color: #20C20E;
+  text-shadow: 1px 1px 5px black;
+  transform: scale(1.2);
+}
+
+.about-me .about {
+  display: flex;
+  overflow-x: hidden;
+  height: auto;
+  padding: 0.5rem 1.5rem; 
+  left: 0;
+}
+
+.about-me .about .carousel-wrap div {
+  width: 100vw;
+  height: auto;
+}
+
+.carousel-fade {
+  animation-name: fadein;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/*
+----- EDUCATION
+*/
+
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.education img {
+  height: 7rem;
+  padding: 10px;
+  border-radius: 100%;
+
+  animation-name: expand;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes expand {
+  33% { transform: scale(1.2) }
+  66% { transform: scale(0.9) }
+  to { transform: scale(1.1) }
+}
+
+.education .education-projects {
+  padding-top: 0.5rem;
+  align-self: start;
+}
+
+.education .education-projects ul {
+  list-style-type: "> ";
+}
+
+.education .education-projects b {
+  color: #20C20E;
+}
+
+/*
+----- WORK EXPERIENCE
+*/
+
+.work-experience {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.work-experience img {
+  height: 7rem;
+  padding: 10px;
+  border-radius: 100%;
+
+  animation-name: expand;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.work-experience p {
+  text-align: left;
+}
+
+.work-experience .work-responsibility {
+  padding-top: 0.5rem;
+  align-self: start;
+}
+
+.work-experience .work-responsibility ul {
+  list-style-type: "> ";
+}
+
+.work-experience .work-responsibility b {
+  color: #20C20E;
+}
+
+/*
+----- SKILL
+*/
+
+.skill {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.skill img {
+  height: 7rem;
+  padding: 10px;
+  border-radius: 100%;
+
+  animation-name: expand;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.skill .skill-list {
+  padding-top: 0.5rem;
+  align-self: start;
+}
+
+.work-experience .work-responsibility ul {
+  list-style-type: "> ";
+}
+
+.work-experience .work-responsibility b {
+  color: #20C20E;
+}
